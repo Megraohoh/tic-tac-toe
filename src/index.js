@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// Square is a component to render a button
 function Square(props) {
     return (
         <button className="square" onClick={props.onClick}>
@@ -9,10 +10,11 @@ function Square(props) {
         </button>
     );
 }
-  
+
+// Board is a component to render 9 squares
   class Board extends React.Component {
     renderSquare(i) {
-      return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)}/>;
+      return <Square value={i} />;
     }
   
     render() {
@@ -46,6 +48,7 @@ function Square(props) {
     }
   }
   
+// Game is a component to render with placeholder values
   class Game extends React.Component {
       constructor(props) {
           super(props);
